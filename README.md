@@ -59,7 +59,7 @@ This function takes the set of patient conditions and determines which types of 
 #### calculate_max_dosage:
 This function calculates the maximum allowable dosage for the patient. The user is prompted to input the patient's body weight (in kilograms). The program validates the input to ensure it falls within the acceptable range (1–300 kg). Using the weight and the specific dosage limits for each anaesthesia type, it calculates the maximum dosage in milligrams and milliliters, providing results for each allowed anaesthesia type.
 
-Finally, the main function brings all of these components together, prompting the user to enter conditions, determining allowed anaesthesia types, and calculating dosages. If no anaesthesia is suitable, it informs the user appropriately. The programme is designed in a way that it only calculates
+Finally, the main function brings all of these components together, prompting the user to enter conditions, determining allowed anaesthesia types, and calculating dosages. If no anaesthesia is suitable, it informs the user appropriately. The program is designed in a way that it only calculates
 
 
 ### test_project.py
@@ -95,13 +95,13 @@ The function proceeds to calculate the correct maximum dosage for the provided w
 
 ## Limitations:
 
-- The programme only focuses on absolute contraindications, not relative contraindications
-- The programme doesn't take into consideration the length or type of the procedure,
+- The program only focuses on absolute contraindications, not relative contraindications
+- The program doesn't take into consideration the length or type of the procedure,
   which would be e.g. relevant for deciding whether to use Ultracain D-S 1:200,000 vs Ultracain D-S forte 1:100,000;
   the latter of which has a longer lasting effect
-- The programme only takes into account 3 types of local anaesthesia, all of which are Articaine-based.
+- The program only takes into account 3 types of local anaesthesia, all of which are Articaine-based.
   While Articaine is commonly used in European countries, Lidocaine, Prilocaine, Mepivacaine, and Bupivacaine are also used for dental anaesthesia
-- The programme only allows input in kg, not other weight units
+- The program only allows input in kg, not other weight units
 
 
 ## Safety Notes
