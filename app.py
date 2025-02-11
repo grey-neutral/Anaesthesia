@@ -98,10 +98,12 @@ if "show_results" not in st.session_state:
 # 4. Main app
 # --------------------------------------
 def main():
-    st.title("Articaine-based anaesthesia Evaluator (Ultracain)")
+    st.title("Articaine-based Anaesthesia Evaluator (Ultracain)")
     st.write(
-        "This application helps determine which type(s) of Ultracain are permissible "
-        "based on patient conditions, and calculates the maximum allowable dosage."
+        "This Python application helps to identify the right type of Articaine-based anaesthesia (Ultracain) "
+        "by evaluating contraindications based on patient medical conditions and calculates the maximum allowable "
+        "dosage based on the patient's body weight."
+        "This app is for informational purposes only, not intended for medical use!"
     )
 
     # Collect all unique contraindications from the dictionary
