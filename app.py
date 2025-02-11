@@ -52,13 +52,13 @@ anaesthesia_info = {
 # --------------------------------------
 def which_anaesthesia(patient_conditions):
     """
-    Returns a list of anesthesia types allowed
+    Returns a list of anaesthesia types allowed
     based on the patient's conditions.
     """
     allowed = []
     for anaesthesia, details in anaesthesia_info.items():
         # If NONE of the contraindications match the patient's conditions,
-        # that anesthesia is allowed.
+        # that anaesthesia is allowed.
         if not any(cond in patient_conditions for cond in details["contraindications"]):
             allowed.append(anaesthesia)
     return allowed
@@ -66,7 +66,7 @@ def which_anaesthesia(patient_conditions):
 
 def calculate_max_dosage(allowed_anaesthesia, weight):
     """
-    Given the allowed anesthesia list and the patient's weight,
+    Given the allowed anaesthesia list and the patient's weight,
     calculates the maximum dosage in mg and ml.
     """
     results = []
@@ -98,7 +98,7 @@ if "show_results" not in st.session_state:
 # 4. Main app
 # --------------------------------------
 def main():
-    st.title("Articaine-based Anesthesia Evaluator (Ultracain)")
+    st.title("Articaine-based anaesthesia Evaluator (Ultracain)")
     st.write(
         "This application helps determine which type(s) of Ultracain are permissible "
         "based on patient conditions, and calculates the maximum allowable dosage."
@@ -128,17 +128,17 @@ def main():
     st.session_state.selected_conditions = set(temp_selected)
 
     # Button to evaluate
-    if st.button("Check Allowed Anesthesia"):
+    if st.button("Check Allowed anaesthesia"):
         st.session_state.allowed_anaesthesia = which_anaesthesia(st.session_state.selected_conditions)
         st.session_state.show_results = True
 
-    # If no anesthesia is allowed, show a warning (only if the user clicked the button)
+    # If no anaesthesia is allowed, show a warning (only if the user clicked the button)
     # or if the user has indicated they want results
     if st.session_state.show_results:
         if len(st.session_state.allowed_anaesthesia) == 0:
-            st.error("No Articaine-based anesthesia is allowed for the given conditions.")
+            st.error("No Articaine-based anaesthesia is allowed for the given conditions.")
         else:
-            st.success("The following anesthesia types are allowed:")
+            st.success("The following anaesthesia types are allowed:")
             for anaesthesia in st.session_state.allowed_anaesthesia:
                 st.write(f"• {anaesthesia}")
 
